@@ -1,17 +1,42 @@
 {
-  "name": "sms-service",
-  "version": "0.0.0",
+  "name": "hulk_sms",
+  "version": "1.0.0",
+  "description": "hulk sms system",
   "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
   "dependencies": {
-    "body-parser": "~1.16.0",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.0",
-    "express": "~4.14.1",
-    "jade": "~1.11.0",
-    "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.2"
-  }
+    "egg": "^1.0.0-rc.2",
+    "node-taobao-topclient": "^0.1.7"
+  },
+  "devDependencies": {
+    "autod": "^2.7.1",
+    "egg-bin": "^2.2.3",
+    "egg-ci": "^1.3.0",
+    "egg-mock": "^3.0.1",
+    "eslint": "^3.16.1",
+    "eslint-config-egg": "^3.2.0",
+    "supertest": "^3.0.0",
+    "webstorm-disable-index": "^1.1.2"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "egg-bin dev",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "6"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "ryan",
+  "license": "MIT"
 }
