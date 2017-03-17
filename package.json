@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "egg-bin dev",
+    "dev": "egg-bin dev --port 7002",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",

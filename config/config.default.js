@@ -14,6 +14,12 @@ module.exports = appInfo => {
     appsecret: '96059005171c300eb6ec0c1c1de99912'
   }
 
+  config.smsApi = {
+    create: 'http://127.0.0.1:7001/sms/create',
+    successful: 'http://127.0.0.1:7001/sms/successful',
+    failure: 'http://127.0.0.1:7001/sms/failure'
+  }
+
   // 中间件配置
   config.middleware = ['authentication', 'notFoundHandler', 'errorHandler']
   config.authentication = {
@@ -21,7 +27,7 @@ module.exports = appInfo => {
   }
   config.security = {
     csrf: {
-      ignoreJSON: true, // 默认为 false，当设置为 true 时，将会放过所有 content-type 为 `application/json` 的请求
+      ignoreJSON: true // 默认为 false，当设置为 true 时，将会放过所有 content-type 为 `application/json` 的请求
     }
   }
 
