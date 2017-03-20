@@ -6,7 +6,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + 'hulkclub'
 
   // service调用token
-  config.hulk_token = 'abcd1234'
+  config.hulk_token = 'hulk_club_20170312'
 
   // 阿里大于配置
   config.alidayu = {
@@ -15,9 +15,9 @@ module.exports = appInfo => {
   }
 
   config.smsApi = {
-    create: 'http://115.159.94.198:7001/sms/create',
-    successful: 'http://115.159.94.198:7001/sms/successful',
-    failure: 'http://115.159.94.198:7001/sms/failure'
+    create: 'http://115.159.94.198:7003/sms/create',
+    successful: 'http://115.159.94.198:7003/sms/successful',
+    failure: 'http://115.159.94.198:7003/sms/failure'
   }
 
   config.smsTemplate = {

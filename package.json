@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "egg": "^1.0.0-rc.2",
+    "md5": "^2.2.1",
     "node-taobao-topclient": "^0.1.7"
   },
   "devDependencies": {
