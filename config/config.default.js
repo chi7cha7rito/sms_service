@@ -19,6 +19,17 @@ module.exports = appInfo => {
     successful: 'http://127.0.0.1:7001/sms/successful',
     failure: 'http://127.0.0.1:7001/sms/failure'
   }
+  config.smsTemplate = {
+    sign: '梦剧场',
+    templateCode: {
+      securityCode: 'SMS_54675003',
+      balancePlus: 'SMS_56595481',
+      balanceMinus: 'SMS_56625463',
+      loyaltyPointPlus: 'SMS_56610388',
+      loyaltyPointMinus: 'SMS_56655428',
+      matchAttend: 'SMS_56550538'
+    }
+  }
 
   // 中间件配置
   config.middleware = ['authentication', 'notFoundHandler', 'errorHandler']
