@@ -82,7 +82,7 @@ module.exports = app => {
         sms_free_sign_name: this.config.smsTemplate.sign,
         rec_num: phoneNo,
         sms_template_code: this.config.smsTemplate.templateCode.loyaltyPointPlus,
-        sms_param: {name, datetime, points: points.toString(), avlPts}
+        sms_param: {name, datetime, points: points.toString(), avlPts: avlPts.toString()}
       }
       const result = await this.sendMessage({phoneNo, params})
       return result
@@ -103,7 +103,7 @@ module.exports = app => {
         sms_free_sign_name: this.config.smsTemplate.sign,
         rec_num: phoneNo,
         sms_template_code: this.config.smsTemplate.templateCode.loyaltyPointMinus,
-        sms_param: {name, datetime, points: points.toString(), avlPts}
+        sms_param: {name, datetime, points: points.toString(), avlPts: avlPts.toString()}
       }
       const result = await this.sendMessage({phoneNo, params})
       return result
