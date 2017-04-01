@@ -31,12 +31,6 @@ module.exports = app => {
       if (result.message) return this.error(result.message)
       return this.success(result.data)
     }
-
-    async matchAttend () {
-      const result = await this.service.alidayu.matchAttend(this.ctx.request.body)
-      if (result.message) return this.error(result.message)
-      return this.success(result.data)
-    }
   }
   return AlidayuController
 }

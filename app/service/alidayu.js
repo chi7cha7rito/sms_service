@@ -29,16 +29,18 @@ module.exports = app => {
     * @description 账户充值
     * @param  {} {phoneNo
     * @param  {} name
-    * @param  {} amount}
+    * @param  {} datetime
+    * @param  {} amount
+    * @param  {} avlAmt}
     */
-    async balancePlus ({ phoneNo, name, amount }) {
+    async balancePlus ({ phoneNo, name, datetime, amount, avlAmt }) {
       const params = {
         extend: '',
         sms_type: 'normal',
         sms_free_sign_name: this.config.smsTemplate.sign,
         rec_num: phoneNo,
         sms_template_code: this.config.smsTemplate.templateCode.balancePlus,
-        sms_param: {name, amount: amount.toString()}
+        sms_param: {name, datetime, amount: amount.toString(), avlAmt: avlAmt.toString()}
       }
       const result = await this.sendMessage({phoneNo, params})
       return result
@@ -48,16 +50,18 @@ module.exports = app => {
      * @description 账户消费
      * @param  {} {phoneNo
      * @param  {} name
-     * @param  {} amount}
+     * @param  {} datetime
+     * @param  {} amount
+     * @param  {} avlAmt}
      */
-    async balanceMinus ({ phoneNo, name, amount }) {
+    async balanceMinus ({ phoneNo, name, datetime, amount, avlAmt }) {
       const params = {
         extend: '',
         sms_type: 'normal',
         sms_free_sign_name: this.config.smsTemplate.sign,
         rec_num: phoneNo,
         sms_template_code: this.config.smsTemplate.templateCode.balanceMinus,
-        sms_param: {name, amount: amount.toString()}
+        sms_param: {name, datetime, amount: amount.toString(), avlAmt: avlAmt.toString()}
       }
       const result = await this.sendMessage({phoneNo, params})
       return result
@@ -67,16 +71,18 @@ module.exports = app => {
      * @description 积分获取
      * @param  {} {phoneNo
      * @param  {} name
-     * @param  {} points}
+     * @param  {} datetime
+     * @param  {} points
+     * @param  {} avlPts}
      */
-    async loyaltyPointPlus ({ phoneNo, name, points }) {
+    async loyaltyPointPlus ({ phoneNo, name, datetime, points, avlPts }) {
       const params = {
         extend: '',
         sms_type: 'normal',
         sms_free_sign_name: this.config.smsTemplate.sign,
         rec_num: phoneNo,
         sms_template_code: this.config.smsTemplate.templateCode.loyaltyPointPlus,
-        sms_param: {name, points: points.toString()}
+        sms_param: {name, datetime, points: points.toString(), avlPts}
       }
       const result = await this.sendMessage({phoneNo, params})
       return result
@@ -86,35 +92,18 @@ module.exports = app => {
      * @description 积分扣减
      * @param  {} {phoneNo
      * @param  {} name
-     * @param  {} points}
+     * @param  {} datetime
+     * @param  {} points
+     * @param  {} avlPts}
      */
-    async loyaltyPointMinus ({ phoneNo, name, points }) {
+    async loyaltyPointMinus ({ phoneNo, name, datetime, points, avlPts }) {
       const params = {
         extend: '',
         sms_type: 'normal',
         sms_free_sign_name: this.config.smsTemplate.sign,
         rec_num: phoneNo,
         sms_template_code: this.config.smsTemplate.templateCode.loyaltyPointMinus,
-        sms_param: {name, points: points.toString()}
-      }
-      const result = await this.sendMessage({phoneNo, params})
-      return result
-    }
-
-    /**
-     * @description 报名参赛
-     * @param  {} {phoneNo
-     * @param  {} name
-     * @param  {} match}
-     */
-    async matchAttend ({ phoneNo, name, match }) {
-      const params = {
-        extend: '',
-        sms_type: 'normal',
-        sms_free_sign_name: this.config.smsTemplate.sign,
-        rec_num: phoneNo,
-        sms_template_code: this.config.smsTemplate.templateCode.matchAttend,
-        sms_param: {name, match}
+        sms_param: {name, datetime, points: points.toString(), avlPts}
       }
       const result = await this.sendMessage({phoneNo, params})
       return result

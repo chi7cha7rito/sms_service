@@ -6,5 +6,4 @@ module.exports = app => {
   app.post('/alidayu/balanceMinus', 'alidayu.balanceMinus')
   app.post('/alidayu/loyaltyPointPlus', 'alidayu.loyaltyPointPlus')
   app.post('/alidayu/loyaltyPointMinus', 'alidayu.loyaltyPointMinus')
-  app.post('/alidayu/matchAttend', 'alidayu.matchAttend')
 }
